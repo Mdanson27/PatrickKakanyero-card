@@ -56,8 +56,6 @@ const actionUrls = {
   whatsapp: `https://api.whatsapp.com/send?phone=256783035906&text=${encodeURIComponent(whatsappMessage)}`
 };
 
-// Explicit mobile intent handoff. This complements the href values and makes
-// Android/iOS browsers reliably invoke the dialer, mail client, or WhatsApp.
 document.querySelectorAll('[data-action]').forEach((control) => {
   control.addEventListener('click', (event) => {
     const action = control.dataset.action;
@@ -82,7 +80,7 @@ const downloadContact = () => {
     anchor.click();
     anchor.remove();
     window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    showToast('Patrick contact card downloaded');
+    showToast('Contact card downloaded');
   } catch (error) {
     showToast('Unable to save contact on this browser');
   }
@@ -94,7 +92,7 @@ document.getElementById('saveContactBottom')?.addEventListener('click', download
 document.getElementById('shareBtn')?.addEventListener('click', async () => {
   const shareData = {
     title: 'Patrick Kakanyero',
-    text: 'Smart executive profile of Patrick Kakanyero — Executive Director, Praxis Institute for Leadership and Professional Excellence.',
+    text: 'I am Patrick Kakanyero, Executive Director and Founding Partner at Praxis Institute for Leadership and Professional Excellence. Here is my digital profile.',
     url: window.location.href
   };
   try {
