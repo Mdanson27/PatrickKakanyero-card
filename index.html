@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#17365D" />
   <meta name="description" content="Patrick Kakanyero — Executive Director, Praxis Institute for Leadership and Professional Excellence." />
   <meta property="og:title" content="Patrick Kakanyero | Executive Profile" />
   <meta property="og:description" content="Executive Director & Founding Partner at Praxis Institute for Leadership and Professional Excellence." />
+  <meta property="og:image" content="Patrick%20Kakanyero.jpeg" />
   <title>Patrick Kakanyero | Executive Profile</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +15,22 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="profile-shell">
+  <div id="loader" class="loader" aria-label="Loading Patrick Kakanyero profile">
+    <div class="loader-frame">
+      <div class="loader-rule"></div>
+      <div id="loaderName" class="loader-name" aria-live="polite"></div>
+      <div class="loader-subtitle">EXECUTIVE PROFILE</div>
+      <div class="loader-rule"></div>
+    </div>
+  </div>
+
+  <main id="profile" class="profile-shell is-hidden">
     <section class="hero" aria-labelledby="profile-name">
       <div class="hero-topline"><span>EXECUTIVE PROFILE</span><span class="gold-line"></span></div>
 
       <div class="portrait-wrap">
         <div class="portrait-ring">
-          <img id="profilePhoto" src="assets/patrick-kakanyero.jpg" alt="Patrick Kakanyero" />
+          <img id="profilePhoto" src="Patrick%20Kakanyero.jpeg" alt="Patrick Kakanyero" />
           <div class="portrait-fallback" aria-hidden="true">PK</div>
         </div>
       </div>
@@ -50,7 +60,7 @@
         <span>01</span>
         <div><p>PROFILE</p><h2 id="about-heading">Purpose-led leadership</h2></div>
       </div>
-      <p class="bio">Public Administrator, director, mentor and institutional leader with experience in management and governance. As Executive Director and Founding Partner of Praxis Institute, Patrick advances ethical leadership, practical professional development and applied learning that turns knowledge into public value.</p>
+      <p class="bio">Public Administrator, director, mentor and institutional leader with experience in management and governance. Patrick leads Praxis Institute with a focus on ethical leadership, practical professional development and applied learning that turns knowledge into public value.</p>
 
       <div class="expertise-grid" aria-label="Core expertise">
         <span>Operations Coordination</span>
