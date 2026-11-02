@@ -1,124 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#17365D" />
-  <meta name="description" content="Patrick Kakanyero — Executive Director, Praxis Institute for Leadership and Professional Excellence." />
-  <meta property="og:title" content="Patrick Kakanyero | Executive Profile" />
-  <meta property="og:description" content="Executive Director & Founding Partner at Praxis Institute for Leadership and Professional Excellence." />
-  <meta property="og:image" content="Patrick%20Kakanyero.jpeg" />
-  <title>Patrick Kakanyero | Executive Profile</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Official smart digital profile of Patrick Kakanyero — Executive Director, Praxis Institute for Leadership and Professional Excellence." />
+  <title>Patrick Kakanyero | Smart Executive Profile</title>
+  <link rel="preload" as="image" href="Patrick Kakanyero.jpeg" type="image/jpeg" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Libre+Caslon+Display&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div id="loader" class="loader" aria-label="Loading Patrick Kakanyero profile">
-    <div class="loader-frame">
-      <div class="loader-rule"></div>
-      <div id="loaderName" class="loader-name" aria-live="polite"></div>
-      <div class="loader-subtitle">EXECUTIVE PROFILE</div>
-      <div class="loader-rule"></div>
+<body class="loading">
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-eyebrow">EXECUTIVE PROFILE</span>
+      <div class="loader-name" id="loaderName"></div>
+      <div class="loader-line"><i></i></div>
+      <span class="loader-sub">PRAXIS INSTITUTE · GULU, UGANDA</span>
     </div>
   </div>
 
-  <main id="profile" class="profile-shell is-hidden">
-    <section class="hero" aria-labelledby="profile-name">
-      <div class="hero-topline"><span>EXECUTIVE PROFILE</span><span class="gold-line"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-      <div class="portrait-wrap">
-        <div class="portrait-ring">
-          <img id="profilePhoto" src="Patrick%20Kakanyero.jpeg" alt="Patrick Kakanyero" />
-          <div class="portrait-fallback" aria-hidden="true">PK</div>
-        </div>
-      </div>
-
-      <p class="eyebrow">LEADERSHIP · GOVERNANCE · PROFESSIONAL EXCELLENCE</p>
-      <h1 id="profile-name">Patrick Kakanyero</h1>
-      <p class="role">Executive Director</p>
-      <p class="organisation">Praxis Institute for Leadership and Professional Excellence</p>
-
-      <div class="primary-actions" aria-label="Primary contact actions">
-        <a href="tel:+256783035906" class="action-btn primary">Call</a>
-        <a href="https://wa.me/256783035906" class="action-btn" target="_blank" rel="noopener">WhatsApp</a>
-        <a href="mailto:patrick.kakanyero@outlook.com" class="action-btn">Email</a>
-        <button id="saveContact" class="action-btn" type="button">Save Contact</button>
-      </div>
-
-      <div class="social-row" aria-label="Social profiles">
-        <a href="https://www.linkedin.com/in/pkakanyero" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-        <a href="https://www.instagram.com/pkakanyero" target="_blank" rel="noopener" aria-label="Instagram">ig</a>
-        <a href="https://www.facebook.com/PKakanyero" target="_blank" rel="noopener" aria-label="Facebook">f</a>
-        <a href="https://x.com/PKakanyero" target="_blank" rel="noopener" aria-label="X">𝕏</a>
-      </div>
-    </section>
-
-    <section class="section about-section" aria-labelledby="about-heading">
-      <div class="section-heading">
-        <span>01</span>
-        <div><p>PROFILE</p><h2 id="about-heading">Purpose-led leadership</h2></div>
-      </div>
-      <p class="bio">Public Administrator, director, mentor and institutional leader with experience in management and governance. Patrick leads Praxis Institute with a focus on ethical leadership, practical professional development and applied learning that turns knowledge into public value.</p>
-
-      <div class="expertise-grid" aria-label="Core expertise">
-        <span>Operations Coordination</span>
-        <span>Office Administration</span>
-        <span>Stakeholder Engagement</span>
-        <span>Executive Support</span>
-        <span>Records Management</span>
-        <span>Event Coordination</span>
-        <span>IT Support</span>
-        <span>Google Workspace</span>
-        <span>Microsoft Office</span>
-      </div>
-    </section>
-
-    <section class="section experience-section" aria-labelledby="experience-heading">
-      <div class="section-heading">
-        <span>02</span>
-        <div><p>CAREER</p><h2 id="experience-heading">Experience</h2></div>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item current">
-          <div class="timeline-date">2026 — Present</div>
-          <div><h3>Executive Director & Founding Partner</h3><p>Praxis Institute for Leadership and Professional Excellence</p></div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-date">2023 — Present</div>
-          <div><h3>Administrator</h3><p>Watoto Church Ministries, Uganda</p></div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-date">2023 — 2026</div>
-          <div><h3>Program Manager</h3><p>Jimpak Uganda</p></div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-date">2019 — 2026</div>
-          <div><h3>Safety & Security Supervisor</h3><p>Watoto Church Ministries</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section location-section" aria-labelledby="location-heading">
-      <div class="location-card">
-        <div class="location-copy">
-          <p class="location-label">OFFICE</p>
-          <h2 id="location-heading">Visit Patrick</h2>
-          <address>Plot 71–79 Jomo Kenyatta Road<br />Gulu, Uganda</address>
-        </div>
-        <a class="directions-btn" href="https://www.google.com/maps/search/?api=1&query=Plot+71-79+Jomo+Kenyatta+Road+Gulu+Uganda" target="_blank" rel="noopener">
-          <span>Get Directions</span><span aria-hidden="true">↗</span>
+  <main class="profile-shell" id="profile">
+    <section class="panel hero" id="home">
+      <div class="accent-line" aria-hidden="true"></div>
+      <header class="topbar container">
+        <a href="#home" class="brand-lockup" aria-label="Patrick Kakanyero home">
+          <span class="brand-monogram">PK</span>
+          <span><strong>Patrick Kakanyero</strong><small>Executive Profile</small></span>
         </a>
+        <div class="top-actions">
+          <button class="icon-button" id="shareBtn" aria-label="Share profile">
+            <svg viewBox="0 0 24 24"><path d="M8.6 12.9l6.8 4M15.4 7l-6.8 4m10.9-5.9a2.6 2.6 0 11-5.2 0 2.6 2.6 0 015.2 0zM9.7 12a2.6 2.6 0 11-5.2 0 2.6 2.6 0 015.2 0zm9.8 6.9a2.6 2.6 0 11-5.2 0 2.6 2.6 0 015.2 0z"/></svg>
+          </button>
+          <a class="pill-button" href="tel:+256783035906">Contact</a>
+        </div>
+      </header>
+
+      <div class="hero-grid container">
+        <div class="hero-copy">
+          <div class="status"><span></span> Executive Leadership Profile</div>
+          <p class="kicker">LEADERSHIP · GOVERNANCE · PROFESSIONAL EXCELLENCE</p>
+          <h1><span>Patrick</span><em>Kakanyero</em></h1>
+          <div class="hero-roles">
+            <span>Executive Director</span>
+            <span>Founding Partner · Praxis Institute for Leadership and Professional Excellence</span>
+          </div>
+          <p class="hero-intro">Public Administrator, director, mentor and institutional leader focused on ethical leadership, disciplined management, accountability and applied learning that advances the public good.</p>
+
+          <div class="hero-actions">
+            <a href="tel:+256783035906" class="primary-action">
+              <svg viewBox="0 0 24 24"><path d="M7.3 3.5l2.4 5-2 1.6a15.2 15.2 0 006.2 6.2l1.6-2 5 2.4-.5 3.2a2 2 0 01-2 1.7C9.4 21.6 2.4 14.6 2.4 6a2 2 0 011.7-2l3.2-.5z"/></svg>
+              Call
+            </a>
+            <a href="https://wa.me/256783035906?text=Hello%20Patrick%20Kakanyero%2C%20I%20am%20reaching%20out%20after%20viewing%20your%20digital%20profile." class="secondary-action branded-action" target="_blank" rel="noopener">
+              <svg class="brand-svg" viewBox="0 0 24 24"><path d="M12.04 2a9.84 9.84 0 0 0-8.42 14.92L2 22l5.24-1.55A9.95 9.95 0 1 0 12.04 2Zm0 17.95a8.05 8.05 0 0 1-4.1-1.12l-.29-.17-3.11.92.94-3.03-.19-.31a7.98 7.98 0 1 1 6.75 3.71Z"/></svg>
+              WhatsApp
+            </a>
+            <a href="mailto:patrick.kakanyero@outlook.com" class="secondary-action">Email</a>
+            <button class="secondary-action" id="saveContact">Save Contact</button>
+          </div>
+        </div>
+
+        <div class="portrait-wrap">
+          <div class="portrait-frame">
+            <img class="portrait" src="Patrick Kakanyero.jpeg" alt="Patrick Kakanyero" fetchpriority="high" decoding="async" />
+            <div class="portrait-overlay"></div>
+            <div class="portrait-caption"><small>EXECUTIVE DIRECTOR</small><strong>Praxis Institute</strong><span>Gulu · Uganda</span></div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <span>Patrick Kakanyero</span>
-      <span class="footer-mark">PRAXIS</span>
-      <span>Digital profile by AutoMinds Africa</span>
-    </footer>
+    <section class="panel service" id="leadership">
+      <div class="section-watermark">PRAXIS</div>
+      <div class="container service-layout">
+        <div class="section-heading">
+          <p class="kicker">LEADERSHIP &amp; PROFESSIONAL EXCELLENCE</p>
+          <h2>Purpose-led leadership with <em>discipline and integrity.</em></h2>
+          <p>Patrick brings experience in institutional management, governance, administration, mentorship and professional development, with a strong emphasis on responsibility, accountability and continuous learning.</p>
+          <div class="competencies">
+            <span>Leadership &amp; Governance</span>
+            <span>Institutional Management</span>
+            <span>Stakeholder Engagement</span>
+            <span>Executive Support</span>
+            <span>Records &amp; Information Management</span>
+            <span>Professional Development</span>
+          </div>
+        </div>
+
+        <div class="leadership-card">
+          <div class="card-label">CAREER EXPERIENCE</div>
+          <div class="current-grid">
+            <article class="current-card"><b>2026–Present</b><h3>Executive Director &amp; Founding Partner</h3><p>Praxis Institute for Leadership and Professional Excellence</p></article>
+            <article class="current-card"><b>2023–Present</b><h3>Administrator</h3><p>Watoto Church Ministries, Uganda</p></article>
+          </div>
+          <div class="past-label">EARLIER EXPERIENCE</div>
+          <div class="career-grid">
+            <article class="career-item"><b>2023–2026</b><div><h3>Program Manager</h3><p>Jimpak Uganda</p></div></article>
+            <article class="career-item"><b>2019–2026</b><div><h3>Safety &amp; Security Supervisor</h3><p>Watoto Church Ministries</p></div></article>
+          </div>
+          <div class="training-note">
+            <small>TRAINING &amp; FELLOWSHIP EXPERIENCE</small>
+            <p>Franklyn Institute of Public Management and Leadership · Global Shapers Project of East Africa · Oaks and Crown Leadership · Ahaki-Na-Haki Institute</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel connect" id="connect">
+      <div class="container connect-layout">
+        <div class="connect-copy">
+          <div class="praxis-mark">PRAXIS</div>
+          <p class="kicker">PROFESSIONAL CONTACT</p>
+          <h2>Leadership that remains <em>accessible and connected.</em></h2>
+          <p>For professional engagements, training, mentorship, institutional matters and correspondence, use the direct contact channels below.</p>
+        </div>
+
+        <div class="contact-card">
+          <a href="tel:+256783035906" class="contact-row"><span class="contact-icon">☎</span><div><small>MOBILE</small><strong>+256 783 035 906</strong></div><b>Call</b></a>
+          <a href="https://wa.me/256783035906" target="_blank" rel="noopener" class="contact-row"><span class="contact-icon">◉</span><div><small>WHATSAPP</small><strong>+256 783 035 906</strong></div><b>Message</b></a>
+          <a href="mailto:patrick.kakanyero@outlook.com" class="contact-row"><span class="contact-icon">✉</span><div><small>EMAIL</small><strong>patrick.kakanyero@outlook.com</strong></div><b>Email</b></a>
+          <a href="https://www.linkedin.com/in/pkakanyero" target="_blank" rel="noopener" class="contact-row"><span class="contact-icon">in</span><div><small>LINKEDIN</small><strong>/in/pkakanyero</strong></div><b>Open</b></a>
+          <div class="social-strip">
+            <a href="https://www.instagram.com/pkakanyero" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/PKakanyero" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://x.com/PKakanyero" target="_blank" rel="noopener">X</a>
+          </div>
+
+          <div class="office-block">
+            <div><small>OFFICE LOCATION</small><strong>Plot 71–79 Jomo Kenyatta Road, Gulu, Uganda</strong></div>
+            <a class="directions-button" href="https://www.google.com/maps/search/?api=1&query=Plot+71-79+Jomo+Kenyatta+Road+Gulu+Uganda" target="_blank" rel="noopener">Get Directions ↗</a>
+          </div>
+
+          <button class="vcard-button" id="saveContactBottom">Save Patrick to Contacts</button>
+        </div>
+      </div>
+
+      <footer class="profile-footer">
+        <div class="autominds-signature"><span class="signature-bulb">✦</span><span class="signature-copy"><small>POWERED BY</small><strong>AutoMinds Africa</strong></span></div>
+      </footer>
+    </section>
   </main>
 
   <script src="script.js"></script>
