@@ -49,19 +49,43 @@ Promise.all([imageReady(photo)]).finally(() => {
 });
 window.setTimeout(hideLoader, 2800);
 
+const whatsappMessage = 'Hello Patrick Kakanyero, I am reaching out after viewing your digital profile.';
+const actionUrls = {
+  call: 'tel:+256783035906',
+  email: 'mailto:patrick.kakanyero@outlook.com?subject=Enquiry%20via%20Patrick%20Kakanyero%20Digital%20Profile&body=Dear%20Patrick%20Kakanyero%2C%0A%0AI%20am%20reaching%20out%20after%20viewing%20your%20digital%20profile.%0A%0A',
+  whatsapp: `https://api.whatsapp.com/send?phone=256783035906&text=${encodeURIComponent(whatsappMessage)}`
+};
+
+// Explicit mobile intent handoff. This complements the href values and makes
+// Android/iOS browsers reliably invoke the dialer, mail client, or WhatsApp.
+document.querySelectorAll('[data-action]').forEach((control) => {
+  control.addEventListener('click', (event) => {
+    const action = control.dataset.action;
+    const destination = actionUrls[action];
+    if (!destination) return;
+    event.preventDefault();
+    window.location.href = destination;
+  });
+});
+
 const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:Kakanyero;Patrick;;;\nFN:Patrick Kakanyero\nORG:Praxis Institute for Leadership and Professional Excellence\nTITLE:Executive Director\nTEL;TYPE=CELL,VOICE:+256783035906\nTEL;TYPE=CELL,WHATSAPP:+256783035906\nEMAIL;TYPE=INTERNET:patrick.kakanyero@outlook.com\nADR;TYPE=WORK:;;Plot 71-79 Jomo Kenyatta Road;Gulu;;;Uganda\nURL:https://www.linkedin.com/in/pkakanyero\nNOTE:Executive Director and Founding Partner at Praxis Institute for Leadership and Professional Excellence.\nEND:VCARD`;
 
 const downloadContact = () => {
-  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-  const url = URL.createObjectURL(blob);
-  const anchor = document.createElement('a');
-  anchor.href = url;
-  anchor.download = 'Patrick-Kakanyero.vcf';
-  document.body.appendChild(anchor);
-  anchor.click();
-  anchor.remove();
-  window.setTimeout(() => URL.revokeObjectURL(url), 500);
-  showToast('Contact card ready');
+  try {
+    const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = 'Patrick-Kakanyero.vcf';
+    anchor.style.display = 'none';
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    showToast('Patrick contact card downloaded');
+  } catch (error) {
+    showToast('Unable to save contact on this browser');
+  }
 };
 
 document.getElementById('saveContact')?.addEventListener('click', downloadContact);
@@ -76,11 +100,19 @@ document.getElementById('shareBtn')?.addEventListener('click', async () => {
   try {
     if (navigator.share) {
       await navigator.share(shareData);
-    } else if (navigator.clipboard) {
+    } else if (navigator.clipboard?.writeText) {
       await navigator.clipboard.writeText(window.location.href);
       showToast('Profile link copied');
     } else {
-      showToast('Use your browser share menu');
+      const temp = document.createElement('textarea');
+      temp.value = window.location.href;
+      temp.style.position = 'fixed';
+      temp.style.opacity = '0';
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      temp.remove();
+      showToast('Profile link copied');
     }
   } catch (error) {
     if (error?.name !== 'AbortError') showToast('Unable to share right now');
