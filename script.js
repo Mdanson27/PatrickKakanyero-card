@@ -1,6 +1,27 @@
+const loader = document.getElementById('loader');
+const loaderName = document.getElementById('loaderName');
+const profile = document.getElementById('profile');
+const fullName = 'Patrick Kakanyero';
+
+let index = 0;
+const typeName = () => {
+  if (index <= fullName.length) {
+    loaderName.textContent = fullName.slice(0, index);
+    index += 1;
+    setTimeout(typeName, 72);
+  } else {
+    setTimeout(() => {
+      loader.classList.add('loader-exit');
+      profile.classList.remove('is-hidden');
+      setTimeout(() => loader.remove(), 600);
+    }, 430);
+  }
+};
+
+window.addEventListener('load', typeName);
+
 const photo = document.getElementById('profilePhoto');
 const fallback = document.querySelector('.portrait-fallback');
-
 photo.addEventListener('error', () => {
   photo.style.display = 'none';
   fallback.style.display = 'flex';
