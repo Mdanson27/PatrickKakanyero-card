@@ -1,0 +1,18 @@
+/* Mobile interaction hardening: keep every real action above decorative layers */
+.hero::before,.hero::after,.service::before,.connect::before,.portrait-wrap::before,.portrait-overlay,.section-watermark,.accent-line{pointer-events:none!important}
+.hero-copy,.hero-actions,.topbar,.contact-card,.contact-row,.social-strip,.office-block,.directions-button,.profile-footer{position:relative;z-index:10}
+.hero-actions a,.hero-actions button,.contact-card a,.contact-card button,.top-actions a,.top-actions button{pointer-events:auto!important;touch-action:manipulation;-webkit-tap-highlight-color:rgba(200,164,71,.18);position:relative;z-index:12}
+.primary-action,.secondary-action,.contact-row,.directions-button,.vcard-button,.icon-button,.pill-button{cursor:pointer!important;-webkit-user-select:none;user-select:none}
+.primary-action:active,.secondary-action:active,.contact-row:active,.directions-button:active,.vcard-button:active{transform:translateY(1px)}
+.brand-svg--whatsapp{width:17px!important;height:17px!important;color:#128C4A!important;fill:currentColor!important;stroke:none!important;flex:0 0 auto}
+.contact-icon--whatsapp{color:#25D366!important;background:#fff!important;border-color:rgba(37,211,102,.45)!important}
+.contact-icon--whatsapp svg{width:17px;height:17px;fill:currentColor!important;stroke:none!important}
+.contact-icon--phone svg,.contact-icon--email svg{width:15px;height:15px;display:block}
+.contact-icon--email svg{fill:none!important;stroke:currentColor!important;stroke-width:1.8}
+@media(max-width:600px){
+  .hero-actions{position:relative!important;z-index:20!important;isolation:isolate}
+  .hero-actions a,.hero-actions button{min-height:46px!important}
+  .contact-card{position:relative!important;z-index:20!important;isolation:isolate}
+  .contact-row{min-height:62px!important}
+  .brand-svg--whatsapp{width:18px!important;height:18px!important}
+}
