@@ -1,42 +1,88 @@
+document.body.classList.add('loading');
+
 const loader = document.getElementById('loader');
 const loaderName = document.getElementById('loaderName');
-const profile = document.getElementById('profile');
+const toast = document.getElementById('toast');
+const photo = document.querySelector('.portrait');
 const fullName = 'Patrick Kakanyero';
+const bootStarted = performance.now();
 
-let index = 0;
-const typeName = () => {
-  if (index <= fullName.length) {
-    loaderName.textContent = fullName.slice(0, index);
-    index += 1;
-    setTimeout(typeName, 72);
-  } else {
-    setTimeout(() => {
-      loader.classList.add('loader-exit');
-      profile.classList.remove('is-hidden');
-      setTimeout(() => loader.remove(), 600);
-    }, 430);
-  }
+const showToast = (message) => {
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add('show');
+  window.clearTimeout(showToast.timer);
+  showToast.timer = window.setTimeout(() => toast.classList.remove('show'), 1600);
 };
 
-window.addEventListener('load', typeName);
+const hideLoader = () => {
+  if (!loader || loader.classList.contains('is-hidden')) return;
+  loader.classList.add('is-hidden');
+  document.body.classList.remove('loading');
+};
 
-const photo = document.getElementById('profilePhoto');
-const fallback = document.querySelector('.portrait-fallback');
-photo.addEventListener('error', () => {
-  photo.style.display = 'none';
-  fallback.style.display = 'flex';
+const imageReady = (img) => {
+  if (!img) return Promise.resolve();
+  if (img.complete && img.naturalWidth) return Promise.resolve();
+  return new Promise((resolve) => {
+    img.addEventListener('load', resolve, { once: true });
+    img.addEventListener('error', resolve, { once: true });
+  });
+};
+
+let charIndex = 0;
+const typeName = () => {
+  if (!loaderName) return;
+  if (charIndex <= fullName.length) {
+    loaderName.textContent = fullName.slice(0, charIndex);
+    charIndex += 1;
+    window.setTimeout(typeName, 72);
+  }
+};
+typeName();
+
+Promise.all([imageReady(photo)]).finally(() => {
+  const elapsed = performance.now() - bootStarted;
+  const minimumVisible = 2100;
+  const remaining = Math.max(0, minimumVisible - elapsed);
+  window.setTimeout(() => requestAnimationFrame(hideLoader), remaining);
 });
+window.setTimeout(hideLoader, 2800);
 
-const vCard = `BEGIN:VCARD\nVERSION:3.0\nFN:Patrick Kakanyero\nN:Kakanyero;Patrick;;;\nORG:Praxis Institute for Leadership and Professional Excellence\nTITLE:Executive Director\nTEL;TYPE=CELL:+256783035906\nTEL;TYPE=WHATSAPP:+256783035906\nEMAIL;TYPE=INTERNET:patrick.kakanyero@outlook.com\nADR;TYPE=WORK:;;Plot 71-79 Jomo Kenyatta Road;Gulu;;;Uganda\nURL:https://www.linkedin.com/in/pkakanyero\nNOTE:Executive Director and Founding Partner at Praxis Institute for Leadership and Professional Excellence.\nEND:VCARD`;
+const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:Kakanyero;Patrick;;;\nFN:Patrick Kakanyero\nORG:Praxis Institute for Leadership and Professional Excellence\nTITLE:Executive Director\nTEL;TYPE=CELL,VOICE:+256783035906\nTEL;TYPE=CELL,WHATSAPP:+256783035906\nEMAIL;TYPE=INTERNET:patrick.kakanyero@outlook.com\nADR;TYPE=WORK:;;Plot 71-79 Jomo Kenyatta Road;Gulu;;;Uganda\nURL:https://www.linkedin.com/in/pkakanyero\nNOTE:Executive Director and Founding Partner at Praxis Institute for Leadership and Professional Excellence.\nEND:VCARD`;
 
-document.getElementById('saveContact').addEventListener('click', () => {
-  const blob = new Blob([vCard], { type: 'text/vcard;charset=utf-8' });
+const downloadContact = () => {
+  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
   const url = URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'Patrick-Kakanyero.vcf';
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-  URL.revokeObjectURL(url);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = 'Patrick-Kakanyero.vcf';
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 500);
+  showToast('Contact card ready');
+};
+
+document.getElementById('saveContact')?.addEventListener('click', downloadContact);
+document.getElementById('saveContactBottom')?.addEventListener('click', downloadContact);
+
+document.getElementById('shareBtn')?.addEventListener('click', async () => {
+  const shareData = {
+    title: 'Patrick Kakanyero',
+    text: 'Smart executive profile of Patrick Kakanyero — Executive Director, Praxis Institute for Leadership and Professional Excellence.',
+    url: window.location.href
+  };
+  try {
+    if (navigator.share) {
+      await navigator.share(shareData);
+    } else if (navigator.clipboard) {
+      await navigator.clipboard.writeText(window.location.href);
+      showToast('Profile link copied');
+    } else {
+      showToast('Use your browser share menu');
+    }
+  } catch (error) {
+    if (error?.name !== 'AbortError') showToast('Unable to share right now');
+  }
 });
