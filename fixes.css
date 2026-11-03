@@ -32,6 +32,9 @@ html,body,body *,button,input,textarea,select{font-family:Arial,Helvetica,sans-s
 .hero-intro{line-height:1.52!important}
 .hero-actions{margin-top:18px!important}
 
+/* Smaller institute name on portrait */
+.portrait-caption strong{font-size:1.35rem!important;line-height:1.05!important}
+
 /* Career hierarchy: Role -> Institution -> Years */
 .current-grid--three{grid-template-columns:repeat(3,1fr)!important;gap:8px!important;margin:10px 0 13px!important}
 .current-card{display:flex!important;flex-direction:column!important;min-height:116px!important;padding:13px!important}
@@ -99,6 +102,7 @@ html,body,body *,button,input,textarea,select{font-family:Arial,Helvetica,sans-s
   .brand-lockup--logo small{font-size:.38rem!important}
   .profile-name{font-size:clamp(2.25rem,9.8vw,3rem)!important;margin-bottom:9px!important}
   .hero-intro{font-size:.67rem!important;line-height:1.46!important}
+  .portrait-caption strong{font-size:1.05rem!important}
   .section-heading h2,.connect h2{font-size:1.48rem!important;line-height:1.04!important;margin-bottom:10px!important}
   .section-heading>p:last-of-type,.connect-copy>p:last-child{font-size:.66rem!important;line-height:1.45!important}
   .competencies{margin-top:13px!important;gap:5px!important}
@@ -133,4 +137,5 @@ html,body,body *,button,input,textarea,select{font-family:Arial,Helvetica,sans-s
   .career-grid--approved{grid-template-columns:1fr!important}
   .map-embed{height:104px}
   .profile-name{font-size:2.2rem!important}
+  .portrait-caption strong{font-size:.98rem!important}
 }
