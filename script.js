@@ -7,6 +7,9 @@ const photo = document.querySelector('.portrait');
 const fullName = 'Patrick Kakanyero';
 const bootStarted = performance.now();
 
+// Remove the duplicate Leadership Profile pill from the hero.
+document.querySelector('.hero-copy .status')?.remove();
+
 const showToast = (message) => {
   if (!toast) return;
   toast.textContent = message;
