@@ -5,30 +5,59 @@
 .primary-action,.secondary-action,.contact-row,.directions-button,.vcard-button,.icon-button,.pill-button{cursor:pointer!important;-webkit-user-select:none;user-select:none}
 .primary-action:active,.secondary-action:active,.contact-row:active,.directions-button:active,.vcard-button:active{transform:translateY(1px)}
 
-/* Approved corporate typography */
-html,body,button,input,textarea,select,
-.loader-name,.loader-eyebrow,.loader-sub,
-h1,h2,h3,.portrait-caption strong,
-.brand-lockup strong,.brand-lockup small,
-.current-card h3,.career-item h3{font-family:Arial,Helvetica,sans-serif!important}
-.profile-name{color:#17365D!important;font-weight:800!important;font-style:normal!important;letter-spacing:-.045em!important;line-height:.92!important}
+/* Final approved corporate typography: Arial throughout */
+html,body,body *,button,input,textarea,select{font-family:Arial,Helvetica,sans-serif!important}
+.profile-name{color:#17365D!important;font-weight:800!important;font-style:normal!important;letter-spacing:-.035em!important;line-height:.96!important}
 .profile-name em,.profile-name span{color:inherit!important;font-style:normal!important;font-weight:inherit!important}
-.section-heading h2,.connect h2{font-weight:700!important;letter-spacing:-.035em!important}
+.hero-copy h1{display:block!important}
+.section-heading h2,.connect h2{font-weight:700!important;letter-spacing:-.025em!important;line-height:1.02!important}
 .section-heading h2 em,.connect h2 em{font-style:normal!important;color:inherit!important}
+.kicker{letter-spacing:.145em!important;margin-bottom:10px!important}
+.status{margin-bottom:15px!important}
+
+/* Reduce decorative treatment; gold remains an accent only */
+.section-watermark{opacity:.45!important}
+.hero{background:linear-gradient(135deg,#fff 0,#fbfcfe 72%,#f1f4f8 100%)!important}
+.hero-copy h1,.profile-name{background:none!important;text-shadow:none!important}
 
 /* Praxis identity */
 .brand-lockup--logo{gap:10px!important;min-width:0}
 .brand-logo{width:62px;height:38px;object-fit:contain;background:#fff;border-radius:7px;padding:3px;border:1px solid rgba(23,54,93,.10);flex:0 0 auto}
-.praxis-logo-panel{width:min(210px,56vw);min-height:70px;background:#fff;border:1px solid rgba(200,164,71,.35);border-radius:10px;padding:8px 12px;display:grid;place-items:center;margin-bottom:10px;box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.praxis-logo-panel{width:min(210px,56vw);min-height:70px;background:#fff;border:1px solid rgba(200,164,71,.35);border-radius:10px;padding:8px 12px;display:grid;place-items:center;margin-bottom:8px;box-shadow:0 10px 24px rgba(0,0,0,.07)}
 .praxis-logo-panel img{display:block;width:100%;height:58px;object-fit:contain}
-.praxis-label{margin:0 0 17px;font-size:.66rem;letter-spacing:.18em;font-weight:800;color:#dec783}
+.praxis-label{margin:0 0 12px;font-size:.64rem;letter-spacing:.15em;font-weight:800;color:#dec783}
 
-/* Career and certification density */
-.current-grid--three{grid-template-columns:repeat(3,1fr)!important}
-.training-intro{margin:6px 0 7px!important;font-size:.59rem!important;color:#667486!important}
-.training-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 12px}
-.training-list li{position:relative;padding-left:10px;font-size:.55rem;line-height:1.35;color:#667486}
-.training-list li::before{content:"";position:absolute;left:0;top:.48em;width:4px;height:4px;border-radius:50%;background:#C8A447}
+/* Tighter hero rhythm */
+.hero-roles{margin-bottom:12px!important}
+.hero-intro{line-height:1.52!important}
+.hero-actions{margin-top:18px!important}
+
+/* Career hierarchy: Role -> Institution -> Years */
+.current-grid--three{grid-template-columns:repeat(3,1fr)!important;gap:8px!important;margin:10px 0 13px!important}
+.current-card{display:flex!important;flex-direction:column!important;min-height:116px!important;padding:13px!important}
+.current-card h3{order:1!important;margin:0 0 5px!important;font-size:.78rem!important;line-height:1.22!important}
+.current-card p{order:2!important;margin:0!important;font-size:.59rem!important;line-height:1.33!important}
+.current-card .career-period{order:3!important;margin-top:auto!important;padding-top:9px!important;font-size:.55rem!important;color:#eadba8!important;font-weight:700!important}
+.career-grid--approved{grid-template-columns:1fr 1fr!important;gap:0 14px!important;margin-top:6px!important}
+.career-item--approved{display:block!important;padding:8px 0!important;border-top:1px solid #ece9e1!important}
+.career-item--approved>div{display:block!important}
+.career-item--approved h3{font-size:.69rem!important;margin:0 0 3px!important;color:#21364d!important}
+.career-item--approved p{font-size:.57rem!important;line-height:1.3!important;margin:0 0 4px!important;color:#6f7a86!important}
+.career-item--approved .career-period{display:block!important;font-size:.55rem!important;color:#947523!important;font-weight:700!important}
+.card-label,.past-label,.training-note small{letter-spacing:.145em!important}
+.past-label{margin-top:2px!important}
+
+/* Training, fellowship & certification: clean stacked list */
+.training-note{margin-top:7px!important;padding-top:10px!important}
+.training-intro{margin:6px 0 6px!important;font-size:.58rem!important;color:#667486!important}
+.training-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:3px}
+.training-list li{position:relative;padding:2px 0 2px 11px;font-size:.54rem;line-height:1.28;color:#667486}
+.training-list li::before{content:"";position:absolute;left:0;top:.62em;width:4px;height:4px;border-radius:50%;background:#C8A447}
+
+/* Connect section: compact, direct and bold */
+.connect-copy .kicker{font-weight:800!important}
+.connect-copy h2{margin-bottom:13px!important}
+.connect-copy>p:last-child{line-height:1.55!important}
 
 /* WhatsApp brand treatment */
 .brand-svg--whatsapp{width:17px!important;height:17px!important;color:#128C4A!important;fill:currentColor!important;stroke:none!important;flex:0 0 auto}
@@ -38,51 +67,70 @@ h1,h2,h3,.portrait-caption strong,
 .contact-icon--email svg{fill:none!important;stroke:currentColor!important;stroke-width:1.8}
 
 /* Real Google Map office card */
-.office-map-block{padding:13px 0 11px;border-bottom:1px solid rgba(255,255,255,.10)}
-.office-map-head{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-bottom:9px}
+.office-map-block{padding:12px 0 10px;border-bottom:1px solid rgba(255,255,255,.10)}
+.office-map-head{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;margin-bottom:8px}
 .office-map-head>div{display:grid;gap:4px;min-width:0}
-.office-map-head small{font-size:.48rem;letter-spacing:.16em;color:#9fb0c0}
-.office-map-head strong{font-size:.68rem;line-height:1.32;color:#fff}
-.map-embed{height:148px;border-radius:9px;overflow:hidden;border:1px solid rgba(200,164,71,.34);background:#dfe5eb;box-shadow:0 12px 26px rgba(0,0,0,.12)}
+.office-map-head small{font-size:.47rem;letter-spacing:.15em;color:#9fb0c0}
+.office-map-head strong{font-size:.67rem;line-height:1.3;color:#fff}
+.map-embed{height:142px;border-radius:9px;overflow:hidden;border:1px solid rgba(200,164,71,.34);background:#dfe5eb;box-shadow:0 10px 22px rgba(0,0,0,.11)}
 .map-embed iframe{display:block;width:100%;height:100%;border:0}
+
+/* Make headings slightly smaller and tighter */
+@media(min-width:921px){
+  .section-heading h2,.connect h2{font-size:clamp(2.25rem,3.7vw,4rem)!important}
+  .service-layout,.connect-layout{gap:42px!important}
+}
 
 @media(max-width:920px){
   .current-grid--three{grid-template-columns:1fr 1fr!important}
-  .current-grid--three .current-card:last-child{grid-column:1/-1;min-height:92px}
+  .current-grid--three .current-card:last-child{grid-column:1/-1;min-height:88px!important}
+  .section-heading h2,.connect h2{font-size:2rem!important}
 }
 
 @media(max-width:600px){
   .hero-actions{position:relative!important;z-index:20!important;isolation:isolate}
   .hero-actions a,.hero-actions button{min-height:46px!important}
   .contact-card{position:relative!important;z-index:20!important;isolation:isolate}
-  .contact-row{min-height:58px!important}
+  .contact-row{min-height:56px!important}
   .brand-svg--whatsapp{width:18px!important;height:18px!important}
   .brand-logo{width:48px;height:31px;padding:2px;border-radius:6px}
   .brand-lockup--logo{gap:7px!important}
   .brand-lockup--logo strong{font-size:.62rem!important}
   .brand-lockup--logo small{font-size:.38rem!important}
-  .profile-name{font-size:clamp(2.4rem,10.5vw,3.2rem)!important;margin-bottom:10px!important}
-  .hero-intro{font-size:.68rem!important;line-height:1.48!important}
-  .section-heading h2,.connect h2{font-size:1.65rem!important;line-height:1.04!important}
+  .profile-name{font-size:clamp(2.25rem,9.8vw,3rem)!important;margin-bottom:9px!important}
+  .hero-intro{font-size:.67rem!important;line-height:1.46!important}
+  .section-heading h2,.connect h2{font-size:1.48rem!important;line-height:1.04!important;margin-bottom:10px!important}
+  .section-heading>p:last-of-type,.connect-copy>p:last-child{font-size:.66rem!important;line-height:1.45!important}
+  .competencies{margin-top:13px!important;gap:5px!important}
+  .competencies span{padding:6px 8px!important;font-size:.55rem!important}
+  .leadership-card{padding:16px 14px!important}
   .current-grid--three{grid-template-columns:1fr 1fr!important;gap:6px!important}
-  .current-grid--three .current-card{min-height:99px!important;padding:9px!important}
-  .current-grid--three .current-card:last-child{grid-column:1/-1;min-height:76px!important}
-  .training-list{grid-template-columns:1fr 1fr;gap:4px 8px}
-  .training-list li{font-size:.47rem;line-height:1.28;padding-left:8px}
-  .training-intro{font-size:.5rem!important;margin:5px 0 6px!important}
-  .praxis-logo-panel{width:145px;min-height:52px;padding:6px 9px;margin-bottom:8px}
-  .praxis-logo-panel img{height:40px}
-  .praxis-label{font-size:.48rem;margin-bottom:10px}
-  .office-map-block{padding:10px 0 9px}
-  .office-map-head{gap:8px;margin-bottom:7px}
-  .office-map-head strong{font-size:.58rem;line-height:1.28}
-  .directions-button{padding:8px 9px!important;font-size:.53rem!important}
-  .map-embed{height:118px;border-radius:8px}
-  .vcard-button{margin-top:9px!important}
+  .current-grid--three .current-card{min-height:96px!important;padding:9px!important}
+  .current-grid--three .current-card:last-child{grid-column:1/-1;min-height:74px!important}
+  .current-card h3{font-size:.67rem!important;margin-bottom:3px!important}
+  .current-card p{font-size:.52rem!important;line-height:1.25!important}
+  .current-card .career-period{font-size:.49rem!important;padding-top:6px!important}
+  .career-grid--approved{gap:0 10px!important}
+  .career-item--approved{padding:7px 0!important}
+  .career-item--approved h3{font-size:.61rem!important}
+  .career-item--approved p{font-size:.5rem!important}
+  .career-item--approved .career-period{font-size:.48rem!important}
+  .training-list{grid-template-columns:1fr!important;gap:1px!important}
+  .training-list li{font-size:.48rem;line-height:1.2;padding:2px 0 2px 8px}
+  .training-intro{font-size:.49rem!important;margin:4px 0 4px!important}
+  .praxis-logo-panel{width:140px;min-height:50px;padding:5px 8px;margin-bottom:6px}
+  .praxis-logo-panel img{height:38px}
+  .praxis-label{font-size:.46rem;margin-bottom:8px}
+  .office-map-block{padding:9px 0 8px}
+  .office-map-head{gap:7px;margin-bottom:6px}
+  .office-map-head strong{font-size:.56rem;line-height:1.25}
+  .directions-button{padding:7px 8px!important;font-size:.51rem!important}
+  .map-embed{height:112px;border-radius:8px}
+  .vcard-button{margin-top:8px!important}
 }
 
 @media(max-width:380px){
-  .training-list{grid-template-columns:1fr}
-  .map-embed{height:108px}
-  .profile-name{font-size:2.35rem!important}
+  .career-grid--approved{grid-template-columns:1fr!important}
+  .map-embed{height:104px}
+  .profile-name{font-size:2.2rem!important}
 }
