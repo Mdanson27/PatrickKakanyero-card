@@ -66,7 +66,7 @@ document.querySelectorAll('[data-action]').forEach((control) => {
   });
 });
 
-const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:Kakanyero;Patrick;;;\nFN:Patrick Kakanyero\nORG:Praxis Institute for Leadership and Professional Excellence\nTITLE:Executive Director\nTEL;TYPE=CELL,VOICE:+256783035906\nTEL;TYPE=CELL,WHATSAPP:+256783035906\nEMAIL;TYPE=INTERNET:patrick.kakanyero@outlook.com\nADR;TYPE=WORK:;;Plot 71-79 Jomo Kenyatta Road;Gulu;;;Uganda\nURL:https://www.linkedin.com/in/pkakanyero\nNOTE:Executive Director and Founding Partner at Praxis Institute for Leadership and Professional Excellence.\nEND:VCARD`;
+const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:Kakanyero;Patrick;;;\nFN:Patrick Kakanyero\nORG:Praxis Institute for Leadership and Professional Excellence\nTITLE:Executive Director\nTEL;TYPE=CELL,VOICE:+256783035906\nTEL;TYPE=CELL,WHATSAPP:+256783035906\nEMAIL;TYPE=INTERNET:patrick.kakanyero@outlook.com\nADR;TYPE=WORK:;;71-79 Jomo Kenyatta Road, Elephante Commons;Gulu;;;Uganda\nURL:https://www.linkedin.com/in/pkakanyero\nNOTE:Executive Director at Praxis Institute for Leadership and Professional Excellence.\nEND:VCARD`;
 
 const downloadContact = () => {
   try {
@@ -92,7 +92,7 @@ document.getElementById('saveContactBottom')?.addEventListener('click', download
 document.getElementById('shareBtn')?.addEventListener('click', async () => {
   const shareData = {
     title: 'Patrick Kakanyero',
-    text: 'I am Patrick Kakanyero, Executive Director and Founding Partner at Praxis Institute for Leadership and Professional Excellence. Here is my digital profile.',
+    text: 'I am Patrick Kakanyero, Executive Director at Praxis Institute for Leadership and Professional Excellence. Here is my digital profile.',
     url: window.location.href
   };
   try {
