@@ -1,18 +1,88 @@
 /* Mobile interaction hardening: keep every real action above decorative layers */
 .hero::before,.hero::after,.service::before,.connect::before,.portrait-wrap::before,.portrait-overlay,.section-watermark,.accent-line{pointer-events:none!important}
-.hero-copy,.hero-actions,.topbar,.contact-card,.contact-row,.social-strip,.office-block,.directions-button,.profile-footer{position:relative;z-index:10}
+.hero-copy,.hero-actions,.topbar,.contact-card,.contact-row,.social-strip,.office-map-block,.office-map-head,.directions-button,.profile-footer{position:relative;z-index:10}
 .hero-actions a,.hero-actions button,.contact-card a,.contact-card button,.top-actions a,.top-actions button{pointer-events:auto!important;touch-action:manipulation;-webkit-tap-highlight-color:rgba(200,164,71,.18);position:relative;z-index:12}
 .primary-action,.secondary-action,.contact-row,.directions-button,.vcard-button,.icon-button,.pill-button{cursor:pointer!important;-webkit-user-select:none;user-select:none}
 .primary-action:active,.secondary-action:active,.contact-row:active,.directions-button:active,.vcard-button:active{transform:translateY(1px)}
+
+/* Approved corporate typography */
+html,body,button,input,textarea,select,
+.loader-name,.loader-eyebrow,.loader-sub,
+h1,h2,h3,.portrait-caption strong,
+.brand-lockup strong,.brand-lockup small,
+.current-card h3,.career-item h3{font-family:Arial,Helvetica,sans-serif!important}
+.profile-name{color:#17365D!important;font-weight:800!important;font-style:normal!important;letter-spacing:-.045em!important;line-height:.92!important}
+.profile-name em,.profile-name span{color:inherit!important;font-style:normal!important;font-weight:inherit!important}
+.section-heading h2,.connect h2{font-weight:700!important;letter-spacing:-.035em!important}
+.section-heading h2 em,.connect h2 em{font-style:normal!important;color:inherit!important}
+
+/* Praxis identity */
+.brand-lockup--logo{gap:10px!important;min-width:0}
+.brand-logo{width:62px;height:38px;object-fit:contain;background:#fff;border-radius:7px;padding:3px;border:1px solid rgba(23,54,93,.10);flex:0 0 auto}
+.praxis-logo-panel{width:min(210px,56vw);min-height:70px;background:#fff;border:1px solid rgba(200,164,71,.35);border-radius:10px;padding:8px 12px;display:grid;place-items:center;margin-bottom:10px;box-shadow:0 12px 28px rgba(0,0,0,.08)}
+.praxis-logo-panel img{display:block;width:100%;height:58px;object-fit:contain}
+.praxis-label{margin:0 0 17px;font-size:.66rem;letter-spacing:.18em;font-weight:800;color:#dec783}
+
+/* Career and certification density */
+.current-grid--three{grid-template-columns:repeat(3,1fr)!important}
+.training-intro{margin:6px 0 7px!important;font-size:.59rem!important;color:#667486!important}
+.training-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:5px 12px}
+.training-list li{position:relative;padding-left:10px;font-size:.55rem;line-height:1.35;color:#667486}
+.training-list li::before{content:"";position:absolute;left:0;top:.48em;width:4px;height:4px;border-radius:50%;background:#C8A447}
+
+/* WhatsApp brand treatment */
 .brand-svg--whatsapp{width:17px!important;height:17px!important;color:#128C4A!important;fill:currentColor!important;stroke:none!important;flex:0 0 auto}
 .contact-icon--whatsapp{color:#25D366!important;background:#fff!important;border-color:rgba(37,211,102,.45)!important}
 .contact-icon--whatsapp svg{width:17px;height:17px;fill:currentColor!important;stroke:none!important}
 .contact-icon--phone svg,.contact-icon--email svg{width:15px;height:15px;display:block}
 .contact-icon--email svg{fill:none!important;stroke:currentColor!important;stroke-width:1.8}
+
+/* Real Google Map office card */
+.office-map-block{padding:13px 0 11px;border-bottom:1px solid rgba(255,255,255,.10)}
+.office-map-head{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-bottom:9px}
+.office-map-head>div{display:grid;gap:4px;min-width:0}
+.office-map-head small{font-size:.48rem;letter-spacing:.16em;color:#9fb0c0}
+.office-map-head strong{font-size:.68rem;line-height:1.32;color:#fff}
+.map-embed{height:148px;border-radius:9px;overflow:hidden;border:1px solid rgba(200,164,71,.34);background:#dfe5eb;box-shadow:0 12px 26px rgba(0,0,0,.12)}
+.map-embed iframe{display:block;width:100%;height:100%;border:0}
+
+@media(max-width:920px){
+  .current-grid--three{grid-template-columns:1fr 1fr!important}
+  .current-grid--three .current-card:last-child{grid-column:1/-1;min-height:92px}
+}
+
 @media(max-width:600px){
   .hero-actions{position:relative!important;z-index:20!important;isolation:isolate}
   .hero-actions a,.hero-actions button{min-height:46px!important}
   .contact-card{position:relative!important;z-index:20!important;isolation:isolate}
-  .contact-row{min-height:62px!important}
+  .contact-row{min-height:58px!important}
   .brand-svg--whatsapp{width:18px!important;height:18px!important}
+  .brand-logo{width:48px;height:31px;padding:2px;border-radius:6px}
+  .brand-lockup--logo{gap:7px!important}
+  .brand-lockup--logo strong{font-size:.62rem!important}
+  .brand-lockup--logo small{font-size:.38rem!important}
+  .profile-name{font-size:clamp(2.4rem,10.5vw,3.2rem)!important;margin-bottom:10px!important}
+  .hero-intro{font-size:.68rem!important;line-height:1.48!important}
+  .section-heading h2,.connect h2{font-size:1.65rem!important;line-height:1.04!important}
+  .current-grid--three{grid-template-columns:1fr 1fr!important;gap:6px!important}
+  .current-grid--three .current-card{min-height:99px!important;padding:9px!important}
+  .current-grid--three .current-card:last-child{grid-column:1/-1;min-height:76px!important}
+  .training-list{grid-template-columns:1fr 1fr;gap:4px 8px}
+  .training-list li{font-size:.47rem;line-height:1.28;padding-left:8px}
+  .training-intro{font-size:.5rem!important;margin:5px 0 6px!important}
+  .praxis-logo-panel{width:145px;min-height:52px;padding:6px 9px;margin-bottom:8px}
+  .praxis-logo-panel img{height:40px}
+  .praxis-label{font-size:.48rem;margin-bottom:10px}
+  .office-map-block{padding:10px 0 9px}
+  .office-map-head{gap:8px;margin-bottom:7px}
+  .office-map-head strong{font-size:.58rem;line-height:1.28}
+  .directions-button{padding:8px 9px!important;font-size:.53rem!important}
+  .map-embed{height:118px;border-radius:8px}
+  .vcard-button{margin-top:9px!important}
+}
+
+@media(max-width:380px){
+  .training-list{grid-template-columns:1fr}
+  .map-embed{height:108px}
+  .profile-name{font-size:2.35rem!important}
 }
